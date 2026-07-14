@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta name="theme-color" content="#07140d" />
+
+  <title>Gabriell &amp; Vitoria</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div
+    class="hearts-container"
+    id="heartsContainer"
+  ></div>
+
+  <main class="page">
+    <section class="phone">
+
+      <div class="status-bar">
+        <span>9:41</span>
+
+        <div class="status-icons">
+          <span>▮▮▮</span>
+          <span>◔</span>
+          <span>▭</span>
+        </div>
+      </div>
+
+      <section class="hero">
+        <div class="hero-glow"></div>
+
+        <img
+          class="cover"
+          src="assets/capa.jpg"
+          alt="Foto principal do casal"
+        />
+
+        <p class="eyebrow">
+          PLAYLIST PÚBLICA
+        </p>
+
+        <h1>
+          Gabriell &amp; Vitoria
+        </h1>
+
+        <p class="intro">
+          Vitoria Lima, eu te convido para escrever um novo capítulo comigo.
+        </p>
+
+        <div class="stats">
+          <div>
+            <strong>1</strong>
+            <span>playlist</span>
+          </div>
+
+          <div>
+            <strong id="contador">
+              Calculando...
+            </strong>
+
+            <span>juntos</span>
+          </div>
+
+          <div>
+            <strong>4</strong>
+            <span>memórias</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button
+            class="play-button"
+            id="playButton"
+            aria-label="Tocar música"
+          >
+            <span id="playIcon">▶</span>
+          </button>
+
+          <button
+            class="icon-button heart"
+            id="heartButton"
+            aria-label="Curtir"
+          >
+            ♥
+          </button>
+
+          <button
+            class="icon-button"
+            id="textButton"
+            aria-label="Abrir texto"
+          >
+            ✉
+          </button>
+
+          <button
+            class="icon-button"
+            id="moreButton"
+            aria-label="Mais opções"
+          >
+            •••
+          </button>
+        </div>
+
+        <div class="music-progress">
+          <span id="tempoAtual">
+            0:00
+          </span>
+
+          <input
+            type="range"
+            id="barraMusica"
+            min="0"
+            max="100"
+            value="0"
+            aria-label="Progresso da música"
+          />
+
+          <span id="duracaoMusica">
+            0:00
+          </span>
+        </div>
+      </section>
+
+      <section class="memories">
+
+        <article class="card">
+          <img
+            class="memory-photo"
+            src="assets/memoria1.jpg"
+            alt="Memória número 1"
+          />
+
+          <h2>V</h2>
+
+          <p>
+            Gabriell &amp; Vitoria
+          </p>
+
+          <small>
+            2026 • Single
+          </small>
+        </article>
+
+        <article class="card">
+          <img
+            class="memory-photo"
+            src="assets/memoria2.jpg"
+            alt="Memória número 2"
+          />
+
+          <h2>G</h2>
+
+          <p>
+            Gabriell &amp; Vitoria
+          </p>
+
+          <small>
+            2026 • Single
+          </small>
+        </article>
+
+        <article class="card">
+          <img
+            class="memory-photo"
+            src="assets/memoria3.jpg"
+            alt="Memória número 3"
+          />
+
+          <h2>V</h2>
+
+          <p>
+            Gabriell &amp; Vitoria
+          </p>
+
+          <small>
+            2026 • Single
+          </small>
+        </article>
+
+        <article class="card">
+          <img
+            class="memory-photo"
+            src="assets/memoria4.jpg"
+            alt="Memória número 4"
+          />
+
+          <h2>G</h2>
+
+          <p>
+            Gabriell &amp; Vitoria
+          </p>
+
+          <small>
+            2026 • Single
+          </small>
+        </article>
+
+      </section>
+
+      <button
+        class="open-letter"
+        id="openLetter"
+      >
+        Texto para meu amor
+      </button>
+
+      <audio
+        id="music"
+        preload="metadata"
+      >
+        <source
+          src="assets/musica.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+
+    </section>
+  </main>
+
+  <div
+    class="modal hidden"
+    id="letterModal"
+    aria-hidden="true"
+  >
+    <div
+      class="modal-overlay"
+      id="modalOverlay"
+    ></div>
+
+    <article
+      class="modal-content"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="letterTitle"
+    >
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">
+            PARA VITORIA
+          </p>
+
+          <h2 id="letterTitle">
+            Eu te amo, ou melhor, eu te vivo 🤍
+          </h2>
+        </div>
+
+        <button
+          class="close-button"
+          id="closeModal"
+          aria-label="Fechar texto"
+        >
+          ×
+        </button>
+      </div>
+
+      <div
+        class="letter-text"
+        id="letterText"
+      >
+        <p>
+          Vih, eu nem sei muito bem como começar isso, porque tem tanta coisa
+          que eu queria te falar e às vezes parece que nenhuma palavra consegue
+          explicar de verdade tudo o que eu sinto por você. Eu sei que errei
+          muito com você, sei que fiz coisas que te magoaram e que talvez eu
+          tenha percebido tarde demais o quanto algumas atitudes minhas
+          poderiam acabar afastando a pessoa que eu mais amava. Eu queria muito
+          poder voltar no tempo e fazer diferente, pensar mais antes de agir e
+          ter cuidado com coisas que eu só fui entender depois do fim de tudo.
+        </p>
+
+        <p>
+          A verdade é que eu te amo muito, Vitoria, muito mais do que eu consigo
+          demonstrar ou explicar. E mesmo que hoje a gente ainda compartilhe
+          alguns momentos juntos, ainda converse e ainda passe um tempo perto
+          um do outro, eu ainda sinto falta do que nós éramos. E por mais que eu
+          seja feliz por ainda poder ter você por perto de alguma forma, uma
+          parte de mim sente muita falta do que a gente já foi.
+        </p>
+
+        <p>
+          Às vezes é estranho estar perto de você e, ao mesmo tempo, sentir
+          saudade de você. Porque você está ali, eu ainda posso conversar com
+          você, rir com você e compartilhar alguns momentos, mas não é mais da
+          mesma forma, e isso me deixa maluco. Eu sei que palavras não apagam o
+          passado e também sei que não posso exigir que você esqueça tudo, mas
+          eu queria que você soubesse que, se eu pudesse ter outra oportunidade,
+          eu faria diferente.
+        </p>
+
+        <p>
+          Eu cuidaria melhor de você, ouviria mais, entenderia mais e valorizaria
+          cada pequeno momento ao seu lado. Eu não sei o que o futuro vai trazer
+          para nós e não quero colocar nenhum peso em você com essas palavras.
+          Eu só precisava ser sincero e dizer que eu ainda te amo muito. E, se
+          algum dia existir uma chance para nós novamente, eu gostaria de
+          mostrar através das minhas atitudes o quanto você realmente significa
+          para mim.
+        </p>
+
+        <p>
+          Porque, apesar de todos os meus erros e de tudo o que aconteceu, uma
+          coisa continua sendo verdadeira: eu te amo, Vih.
+        </p>
+
+        <p>
+          Vih, eu também queria falar um pouco sobre você, porque acho que talvez
+          eu nunca tenha conseguido demonstrar direito o quanto você é incrível
+          para mim. Você é literalmente a melhor pessoa que eu já conheci e eu
+          queria muito que você soubesse disso.
+        </p>
+
+        <p>
+          Você merece o mundo, um mundo que infelizmente eu não fui capaz de te
+          dar quando tive a chance. Eu me arrependo muito disso, porque você
+          merecia todo o amor, carinho e cuidado possível, e eu queria ter
+          conseguido te dar tudo isso da forma que você realmente merecia.
+        </p>
+
+        <p>
+          Você é linda demais, e eu não estou falando só da sua aparência, mas
+          de tudo o que faz parte de você. Você tem um coração maravilhoso, um
+          jeito único e várias outras coisinhas que fazem você ser tão especial
+          para mim. Seu sorriso, seu jeito, suas brincadeiras e até suas manias:
+          tudo isso faz parte da pessoa por quem eu me apaixonei e que eu ainda
+          amo tanto.
+        </p>
+
+        <p>
+          Sinceramente, você é a melhor pessoa que eu já conheci. Eu sei que
+          talvez pareça exagero, mas não é. Vc marcou minha vida de um jeito
+          que ninguém nunca conseguiu, e todos os momentos que eu vivi com você
+          significam muito para mim, até os mais simples e bobos.
+        </p>
+
+        <p>
+          Às vezes eu fico pensando em como eu tive a sorte de ter alguém como
+          você na minha vida e em como eu poderia ter valorizado muito mais isso,
+          eu queria ter cuidado melhor de você e do seu coração, porque você
+          nunca mereceu se machucar por causa dos meus erros.
+        </p>
+
+        <p>
+          Você merece ser muito feliz, merece receber todo o amor do mundo e ser
+          tratada da melhor forma possível. Na minha visão, você é a melhor
+          pessoa que já pisou neste mundo.
+        </p>
+
+        <p>
+          Mesmo com tudo o que aconteceu, eu ainda te acho a garota mais incrível
+          e especial que eu já conheci. Eu ainda amo seu jeito, seu sorriso, seu
+          coração e simplesmente quem você é.
+        </p>
+
+        <p>
+          Eu só queria que você soubesse que pra mim você nunca foi qualquer
+          pessoa, você foi e ainda é alguém muito importante na minha vida. Se eu
+          pudesse voltar atrás, eu faria muita coisa diferente, porque hoje eu
+          entendo ainda mais o quanto você é especial e o quanto você realmente
+          merece o mundo inteiro.
+        </p>
+
+        <p>
+          Eu te amo, ou melhor, eu te vivo, Vitoria Lima 🤍.
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <div
+    class="photo-modal hidden"
+    id="photoModal"
+  >
+    <div
+      class="photo-overlay"
+      id="photoOverlay"
+    ></div>
+
+    <div class="photo-content">
+      <button
+        class="photo-close"
+        id="photoClose"
+        aria-label="Fechar foto"
+      >
+        ×
+      </button>
+
+      <img
+        id="photoExpanded"
+        src=""
+        alt="Foto ampliada"
+      />
+
+      <p id="photoCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
